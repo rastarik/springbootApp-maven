@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xml:th="http://thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            List of Products
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>ID</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
+                </tr>
+                <tr th:each="p:${listOfProducts}">
+                    <td th:text ="${p.reference}"></td>
+                    <td th:text ="${p.code}"></td>
+                    <td th:text ="${p.price}"></td>
+                    <td th:text ="${p.quantity}"></td>
+                    <td th:text ="${p.description}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
